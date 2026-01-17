@@ -58,6 +58,30 @@ pnpm dev
 - Owners app: http://localhost:3000
 - Recall app: http://localhost:3001
 
+## Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `pnpm run setup` | Interactive setup wizard - configure community name, state, features |
+| `pnpm install` | Install all dependencies for the monorepo |
+| `pnpm dev` | Start development servers (owners on :3000, recall on :3001) |
+| `pnpm build` | Build all apps for production |
+| `pnpm lint` | Run linting across all apps |
+| `pnpm clean` | Remove build artifacts and node_modules cache |
+
+### Running Individual Apps
+
+```bash
+# Start only the owners app
+pnpm --filter owners dev
+
+# Start only the recall app
+pnpm --filter recall dev
+
+# Build only the owners app
+pnpm --filter owners build
+```
+
 ## Deployment Modes
 
 The setup script determines your deployment mode based on selected features:
