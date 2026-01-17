@@ -1,0 +1,32 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "globalEnv": [
+    "OPENAI_API_KEY",
+    "PINECONE_API_KEY",
+    "PINECONE_GEN_API_KEY",
+    "PINECONE_INDEX_NAME",
+    "RESEND_API_KEY",
+    "NOTIFICATION_EMAIL",
+    "NEXT_PUBLIC_SHOW_CHAT",
+    "NEXT_PUBLIC_SHOW_RECALL_BANNER",
+    "NEXT_PUBLIC_RECALL_ACTIVE"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**", "out/**"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}
+
