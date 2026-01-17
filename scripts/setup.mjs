@@ -134,17 +134,65 @@ async function main() {
 
   config.state = await ask(`${colors.green}2.${colors.reset} State (for legal references, e.g., "Oregon"): `);
   
-  // Common state statute references
+  // Common state statute references for HOAs/planned communities
   const stateStatutes = {
-    'oregon': 'ORS 94.647',
-    'california': 'Civil Code §5000',
-    'texas': 'Property Code §209',
-    'florida': 'FS 720',
-    'washington': 'RCW 64.38',
-    'colorado': 'CCIOA',
+    'alabama': 'Ala. Code §35-20',
+    'alaska': 'AS §34.08',
     'arizona': 'ARS §33-1801',
+    'arkansas': 'Ark. Code §18-13',
+    'california': 'Civil Code §4000-6150 (Davis-Stirling Act)',
+    'colorado': 'CCIOA (CRS §38-33.3)',
+    'connecticut': 'CGS §47-200',
+    'delaware': 'Del. Code §81',
+    'florida': 'FS 720 (HOA Act)',
+    'georgia': 'O.C.G.A. §44-3',
+    'hawaii': 'HRS §421J',
+    'idaho': 'Idaho Code §55-115',
+    'illinois': '765 ILCS 160 (CICAA)',
+    'indiana': 'IC §32-25.5',
+    'iowa': 'Iowa Code §499B',
+    'kansas': 'KSA §58-4601',
+    'kentucky': 'KRS §381',
+    'louisiana': 'La. R.S. §9:1141.1',
+    'maine': 'Me. Rev. Stat. §33',
+    'maryland': 'Md. Real Prop. §11B',
+    'massachusetts': 'MGL c.183A',
+    'michigan': 'MCL §559.101',
+    'minnesota': 'Minn. Stat. §515B',
+    'mississippi': 'Miss. Code §89-9',
+    'missouri': 'RSMo §448',
+    'montana': 'MCA §70-23',
+    'nebraska': 'Neb. Rev. Stat. §76-825',
+    'nevada': 'NRS 116',
+    'new hampshire': 'RSA 356-B',
+    'new jersey': 'NJSA 46:8B',
+    'new mexico': 'NMSA §47-16',
+    'new york': 'RPL §339',
+    'north carolina': 'NCGS §47F (Planned Community Act)',
+    'north dakota': 'NDCC §47-04.1',
+    'ohio': 'ORC §5311',
+    'oklahoma': 'Okla. Stat. §60-851',
+    'oregon': 'ORS 94.550-94.783 (Planned Community Act)',
+    'pennsylvania': '68 Pa.C.S. §5101 (UPCA)',
+    'rhode island': 'RIGL §34-36.1',
+    'south carolina': 'SC Code §27-30',
+    'south dakota': 'SDCL §43-15A',
+    'tennessee': 'Tenn. Code §66-27',
+    'texas': 'Property Code §209 (HOA Act)',
+    'utah': 'Utah Code §57-8a',
+    'vermont': '27A V.S.A. §1-101',
+    'virginia': 'Va. Code §55.1-1800 (POA Act)',
+    'washington': 'RCW 64.38 (HOA Act)',
+    'west virginia': 'W. Va. Code §36B',
+    'wisconsin': 'Wis. Stat. §703',
+    'wyoming': 'Wyo. Stat. §34-1',
+    'district of columbia': 'DC Code §42-19',
   };
   config.stateStatute = stateStatutes[config.state.toLowerCase()] || '';
+  
+  if (!config.stateStatute) {
+    print(`   ⚠ State statute not found for "${config.state}". You'll need to update {{STATE_STATUTE}} manually.`, colors.yellow);
+  }
   
   config.domain = await ask(`${colors.green}3.${colors.reset} Domain name (e.g., "sunsetridge.homes"): `);
   config.cityState = await ask(`${colors.green}4.${colors.reset} City, State (e.g., "Portland, Oregon"): `);

@@ -131,12 +131,17 @@ homeowners-platform-template/
 - **Content:** Update placeholder text in page components
 
 ### Legal Compliance
-The template includes references to state laws that you should update:
-- Proxy vote duration (default: 11 months, per Oregon ORS 94.647)
-- Quorum requirements
-- Notice periods
+The setup script automatically handles state-specific references:
+- Asks for your state during setup
+- Looks up HOA statutes for all 50 states + DC
+- Replaces `{{STATE}}` and `{{STATE_STATUTE}}` throughout the codebase
 
-Run a search for `{{STATE}}` and `{{STATE_STATUTE}}` to find all locations needing state-specific updates.
+**If your state isn't in the lookup table**, the script will leave `{{STATE_STATUTE}}` as a placeholder. Search for it and update manually with your state's HOA/planned community statute.
+
+You should also review:
+- Proxy vote duration limits (default: 11 months)
+- Quorum requirements for your community
+- Notice periods required by your state
 
 ### Adding Documents
 1. Place PDF documents in a `docs/` folder
