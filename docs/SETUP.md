@@ -17,7 +17,7 @@ git clone https://github.com/oakhillsettlementowners/homeowners-platform-templat
 cd my-community
 
 # Run interactive setup
-pnpm setup
+pnpm run setup
 ```
 
 The setup script will ask you about:

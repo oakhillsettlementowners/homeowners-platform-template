@@ -30,9 +30,7 @@ cd my-community
 ### 2. Run Setup
 
 ```bash
-npm run setup
-# or
-pnpm setup
+pnpm run setup
 ```
 
 The interactive setup will ask about:
