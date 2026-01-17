@@ -23,7 +23,7 @@ This template helps homeowner associations create independent community hubs wit
 ### 1. Clone the Template
 
 ```bash
-git clone https://github.com/yourusername/homeowners-platform-template.git my-community
+git clone https://github.com/oakhillsettlementowners/homeowners-platform-template.git my-community
 cd my-community
 ```
 

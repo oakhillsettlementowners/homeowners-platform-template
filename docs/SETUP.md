@@ -13,7 +13,7 @@ This guide walks you through setting up your homeowners platform from start to f
 
 ```bash
 # Clone the template
-git clone https://github.com/yourusername/homeowners-platform-template.git my-community
+git clone https://github.com/oakhillsettlementowners/homeowners-platform-template.git my-community
 cd my-community
 
 # Run interactive setup
@@ -169,7 +169,7 @@ To pull updates from the template:
 
 ```bash
 # Add template as remote
-git remote add template https://github.com/original/homeowners-platform-template.git
+git remote add template https://github.com/oakhillsettlementowners/homeowners-platform-template.git
 
 # Fetch and merge updates
 git fetch template
